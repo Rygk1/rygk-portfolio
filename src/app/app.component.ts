@@ -23,7 +23,7 @@ export class AppComponent {
     const currentLang = browserLang?.match(/en|es/) ? browserLang : 'es'; // Ajusta 'en|es' a tus idiomas
     this.translate.use(currentLang); // Establece el idioma inicial a usar
 
-    console.log('Idioma por defecto:', this.translate.getDefaultLang());
-    console.log('Idioma actual:', this.translate.currentLang);
+    // console.log('Idioma por defecto:', this.translate.getDefaultLang());
+    // console.log('Idioma actual:', this.translate.currentLang);
   }
 }

@@ -1,29 +1,36 @@
 <section id="contact">
-  <div class="contact-section">
-    <h2 class="section-title">{{ "labels.contact" | translate }}</h2>
+  <div
+    class="contact-section mx-10 mt-20 mb-10 rounded-xl flex items-center justify-center"
+  >
+    <!-- <h2 class="section-title">{{ "labels.contact" | translate }}</h2> -->
 
     <div class="information-content">
-      <div class="profile-picture">
-        <img src="assets/profile/profile-real.webp" alt="Mi foto" />
-      </div>
-      <div class="social-media">
-        <a href="https://github.com/Rygk1" target="_blank" class="nav-icon">
-          <i class="pi pi-github"></i>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/rafael-gaitan"
-          target="_blank"
-          class="nav-icon"
-        >
-          <i class="pi pi-linkedin"></i>
-        </a>
-        <a
-          href="mailto:rafael.gaitan342@gmail.com"
-          target="_blank"
-          class="nav-icon"
-        >
-          <i class="pi pi-envelope"></i>
-        </a>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="social-media">
+          <a href="https://github.com/Rygk1" target="_blank" class="nav-icon">
+            <i class="pi pi-github"></i>
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/rafael-gaitan"
+            target="_blank"
+            class="nav-icon"
+          >
+            <i class="pi pi-linkedin"></i>
+            LinkedIn
+          </a>
+          <a
+            href="mailto:rafael.gaitan342@gmail.com"
+            target="_blank"
+            class="nav-icon"
+          >
+            <i class="pi pi-envelope"></i>
+            Email
+          </a>
+        </div>
+        <div class="profile-picture">
+          <img src="assets/profile/profile-real.webp" alt="Mi foto" />
+        </div>
       </div>
       <div class="contact-description">
         <p>
@@ -48,10 +55,10 @@
 
         <div class="made-with">
           {{ "contact.made" | translate }}
-          <img src="assets/icons/heart.svg" height="60px" /> &
+          <img src="assets/icons/heart.svg" class="h-[60px]" /> &
 
           <a href="https://angular.dev/" target="_blank" class="nav-icon">
-            <img src="assets/icons/angular.svg" height="40px" />
+            <img src="assets/icons/angular.svg" class="h-[40px]" />
           </a>
         </div>
       </div>

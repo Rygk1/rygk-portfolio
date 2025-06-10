@@ -4,13 +4,15 @@
     "projects": "Proyectos",
     "technologies": "Tecnologías",
     "contact": "Contacto",
+    "services": "Servicios",
+    "testimonials": "Testimonios",
     "cv": "CV",
-    "en": "En",
-    "es": "Es"
+    "en": "EN",
+    "es": "ES"
   },
   "about": {
     "name": "Hola, soy Rafael&nbsp;Gaitan",
-    "profession": "Desarrollador front-end con más de 4 años de experiencia en aplicaciones web y móviles",
+    "profession": "Desarrollador front-end + 4 años \nde experiencia en aplicaciones web y móviles",
     "summary": "Me motivan los desafíos y disfruto encontrar soluciones elegantes a problemas complejos",
     "summaryTwo": "Creo en el poder de un buen código: limpio, claro y con propósito",
     "summaryThree": "Trabajo en equipo, escucho, propongo y ajusto, porque cada proyecto merece algo único",
@@ -23,7 +25,8 @@
     "tools": "Herramientas",
     "stack": "Tecnologías",
     "projects": "Proyectos",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "testimonials": "Testimonios"
   },
   "projects": {
     "agrocollect": {
@@ -51,5 +54,9 @@
     "descriptionFive": "Creo que mantenerse activo y aprender constantemente son dos cosas que aplican tanto dentro como fuera del código.",
     "by": "© Hecho a mano por Rafael Gaitan",
     "made": "Hecho con"
+  },
+  "services": {
+    "title": "Mis Servicios",
+    "description": "Ofrezco servicios de desarrollo web y móvil, con un enfoque en la creación de aplicaciones intuitivas y eficientes. Mi experiencia incluye el uso de tecnologías modernas para construir soluciones que se adaptan a las necesidades específicas de cada cliente."
   }
 }

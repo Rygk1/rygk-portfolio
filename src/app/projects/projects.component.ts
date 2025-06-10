@@ -1,57 +1,53 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, computed, Input, signal, Signal } from '@angular/core';
 import { Project } from '../mock/models/mock.model';
-import { CardModule } from 'primeng/card';
-import { ChipModule } from 'primeng/chip';
-import { ButtonModule } from 'primeng/button';
-import { GalleriaModule } from 'primeng/galleria';
 import { TranslateModule } from '@ngx-translate/core';
-// import { TiltDirective } from '../directives/tilt.directive';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [
-    CommonModule,
-    CardModule,
-    ChipModule,
-    ButtonModule,
-    GalleriaModule,
-    TranslateModule,
-    // TiltDirective,
-  ],
+  imports: [CommonModule, TranslateModule, FormsModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
   @Input() projects!: Project[];
+  galleryModal = false;
 
   displayGallery: boolean = false;
-  displayedProjectImages: string[] = [];
+  displayedProjectImages: Signal<string[]> = signal([]);
   projectTitle: string = '';
+  currentSlide: number = 0;
 
-  responsiveOptions: any[] = [
-    {
-      breakpoint: '1500px',
-      numVisible: 5,
-    },
-    {
-      breakpoint: '1024px',
-      numVisible: 3,
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 2,
-    },
-    {
-      breakpoint: '560px',
-      numVisible: 1,
-    },
-  ];
-
-  showGallery(project: Project) {
+  loadModal(project: Project) {
+    if (!project.images) {
+      return;
+    }
     this.projectTitle = project.title;
-    this.displayedProjectImages = project.images;
-    this.displayGallery = true;
+    this.displayedProjectImages = computed(() => project.images);
+    this.galleryModal = true;
+  }
+
+  closeModal() {
+    this.galleryModal = false;
+    this.displayedProjectImages = signal([]);
+    this.projectTitle = '';
+    this.currentSlide = 0;
+  }
+
+  goToSlide(index: number) {
+    this.currentSlide = index;
+  }
+
+  nextSlide() {
+    this.currentSlide =
+      (this.currentSlide + 1) % this.displayedProjectImages().length;
+  }
+
+  prevSlide() {
+    this.currentSlide =
+      (this.currentSlide - 1 + this.displayedProjectImages().length) %
+      this.displayedProjectImages().length;
   }
 }

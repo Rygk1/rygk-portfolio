@@ -1,32 +1,168 @@
 <section id="technologies">
   <div class="tech-section">
     <h2 class="section-title">{{ "labels.stack" | translate }}</h2>
-    <div class="tech-grid">
+    <!-- <div class="tech-grid">
       <ng-container *ngFor="let tech of technologies">
         <div class="tech-card">
           <img [src]="'assets/icons/' + tech.icon + '.svg'" [alt]="tech.name" />
           <span>{{ tech.name }}</span>
         </div>
       </ng-container>
+    </div> -->
+    <div class="overflow-hidden relative carouselContainer">
+      <div
+        class="flex w-max animate-marquee-tech gap-3"
+        (mouseenter)="pauseCarousel()"
+        (mouseleave)="resumeCarousel()"
+      >
+        <ng-container *ngFor="let tech of technologies">
+          <div
+            class="flex-shrink-0 relative sm:w-50 md:w-50 mx-4 flex justify-center items-center transition-transform duration-300 hover:scale-110"
+          >
+            <div class="tech-card">
+              <img
+                [src]="'assets/icons/' + tech.icon + '.svg'"
+                [alt]="tech.name"
+                class="h-12 w-12 transition-transform duration-300"
+              />
+              <span>{{ tech.name }}</span>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngFor="let tech of technologies">
+          <div
+            class="flex-shrink-0 relative sm:w-50 md:w-50 mx-4 flex justify-center items-center p-4 transition-transform duration-300 hover:scale-110"
+          >
+            <div class="tech-card">
+              <img
+                [src]="'assets/icons/' + tech.icon + '.svg'"
+                [alt]="tech.name"
+                class="h-12 w-12 transition-transform duration-300"
+              />
+              <span>{{ tech.name }}</span>
+            </div>
+          </div>
+        </ng-container>
+      </div>
     </div>
 
-    <h2 class="section-title">{{ "labels.tools" | translate }}</h2>
-    <div class="tech-grid">
-      <ng-container *ngFor="let tool of tools">
-        <div class="tech-card">
-          <img [src]="'assets/icons/' + tool.icon + '.svg'" [alt]="tool.name" />
-          <span>{{ tool.name }}</span>
-        </div>
-      </ng-container>
+    <div class="tools-container">
+      <h2 class="section-title tech-title text-end pr-[10%]">
+        {{ "labels.tools" | translate }}
+      </h2>
+      <div class="tech-grid">
+        <ng-container *ngFor="let tool of tools">
+          <div class="tech-card">
+            <img
+              [src]="'assets/icons/' + tool.icon + '.svg'"
+              [alt]="tool.name"
+            />
+            <span>{{ tool.name }}</span>
+          </div>
+        </ng-container>
+      </div>
+      <h2 class="section-title tech-title text-start pl-[10%]">
+        {{ "labels.learning" | translate }}
+      </h2>
+      <div class="tech-grid">
+        <ng-container *ngFor="let tool of learning">
+          <div class="tech-card">
+            <img
+              [src]="'assets/icons/' + tool.icon + '.svg'"
+              [alt]="tool.name"
+            />
+            <span>{{ tool.name }}</span>
+          </div>
+        </ng-container>
+      </div>
     </div>
-    <h2 class="section-title">{{ "labels.learning" | translate }}</h2>
-    <div class="tech-grid">
-      <ng-container *ngFor="let tool of learning">
-        <div class="tech-card">
-          <img [src]="'assets/icons/' + tool.icon + '.svg'" [alt]="tool.name" />
-          <span>{{ tool.name }}</span>
-        </div>
-      </ng-container>
+
+    <h2 class="section-title testimonials-title text-center">
+      {{ "labels.testimonials" | translate }}
+    </h2>
+
+    <div class="group py-20 overflow-hidden">
+      <div class="flex w-max animate-marquee">
+        <!-- Contenedor duplicado 1 -->
+        <ng-container *ngFor="let t of testimonials">
+          <div
+            class="relative bg-white rounded-lg shadow-lg border border-orange-400 p-6 pt-14 w-[250px] sm:w-72 md:w-80 mx-4 h-fit text-center flex-shrink-0"
+          >
+            <!-- Imagen -->
+            <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
+              <div
+                class="w-24 h-24 rounded-full border-4 border-orange-400 overflow-hidden bg-white"
+              >
+                <img
+                  [src]="t.img"
+                  [alt]="t.name"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <h3 class="text-lg font-bold mt-2 text-gray-700">{{ t.name }}</h3>
+            <p class="text-sm text-gray-500 -mt-1">{{ t.profession }}</p>
+            <p class="text-gray-700 mt-3 text-justify text-sm">
+              "{{ t.message }}"
+            </p>
+          </div>
+        </ng-container>
+
+        <!-- Contenedor duplicado 2 -->
+        <ng-container *ngFor="let t of testimonials">
+          <div
+            class="relative bg-white rounded-lg shadow-lg border border-orange-400 p-6 pt-14 w-[250px] sm:w-72 md:w-80 mx-4 h-fit text-center flex-shrink-0"
+          >
+            <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
+              <div
+                class="w-24 h-24 rounded-full border-4 border-orange-400 overflow-hidden bg-white"
+              >
+                <img
+                  [src]="t.img"
+                  [alt]="t.name"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <h3 class="text-lg font-bold mt-2 text-gray-700">{{ t.name }}</h3>
+            <p class="text-sm text-gray-500 -mt-1">{{ t.profession }}</p>
+            <p class="text-gray-700 mt-3 text-justify text-sm">
+              "{{ t.message }}"
+            </p>
+          </div>
+        </ng-container>
+      </div>
     </div>
   </div>
+
+  <!-- <div style="width: 100%; padding: 20px">
+    <div
+      style="
+        height: 400px;
+        width: 300px;
+        padding: 20px;
+        background: #c2b79b;
+        color: #243757;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      "
+    >
+      <div class="profile-picture">
+        <img src="assets/profile/profile-real.webp" alt="Mi foto" />
+      </div>
+      <div style="text-align: center">
+        <h1 style="font-weight: bold; font-size: 1.8rem; margin-bottom: 0">
+          Laura Abril
+        </h1>
+        Web Designer
+      </div>
+      <p style="text-align: center">
+        Es un buen compañero, siempre está ahí para ayudarme a resolver
+        problemas y aprender cosas nuevas.
+      </p>
+    </div>
+  </div> -->
 </section>

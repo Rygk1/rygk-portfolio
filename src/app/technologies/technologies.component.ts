@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Technology, Tool } from '../mock/models/mock.model';
+import { Technology, Testimonial, Tool } from '../mock/models/mock.model';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -10,8 +10,43 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './technologies.component.html',
   styleUrl: './technologies.component.scss',
 })
-export class TechnologiesComponent {
+export class TechnologiesComponent implements OnInit {
   @Input() technologies!: Technology[];
   @Input() tools!: Tool[];
   @Input() learning!: Tool[];
+  @Input() testimonials!: Testimonial[];
+
+  currentSlide = 0;
+  slideWidth = 20;
+  intervalId: any;
+
+  ngOnInit() {
+    this.startCarousel();
+  }
+
+  ngOnDestroy() {
+    this.clearCarousel();
+  }
+
+  startCarousel() {
+    this.intervalId = setInterval(() => {
+      const maxIndex = this.technologies.length - 4;
+      this.currentSlide = (this.currentSlide + 1) % (maxIndex + 1);
+    }, 1200);
+  }
+
+  clearCarousel() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
+  }
+
+  pauseCarousel() {
+    this.clearCarousel();
+  }
+
+  resumeCarousel() {
+    this.startCarousel();
+  }
 }

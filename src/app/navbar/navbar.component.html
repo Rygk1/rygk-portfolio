@@ -1,50 +1,168 @@
-@if (navItems.length > 0) {
-
-<p-menubar
-  [model]="navItems"
-  styleClass="custom-menubar"
-  class="custom-menubar"
->
-  <ng-template pTemplate="start">
-    <img
-      src="assets/logos/logo3.svg"
-      alt="logo"
-      class="logo"
-      (click)="moveToSection()"
-    />
-  </ng-template>
-  <ng-template pTemplate="item" let-item>
-    <a (click)="item.command()" class="p-menuitem-link">
-      <span [class]="item.icon" class="p-menuitem-icon"></span>
-      <span class="p-menuitem-text">{{
-        "navbar." + item.label | translate
-      }}</span>
-    </a>
-  </ng-template>
-  <ng-template pTemplate="end">
-    <div class="nav-icons">
-      <a href="https://github.com/Rygk1" target="_blank" class="nav-icon">
-        <i class="pi pi-github"></i>
-      </a>
-      <a
-        href="https://www.linkedin.com/in/rafael-gaitan"
-        target="_blank"
-        class="nav-icon"
+<div class="navbar bg-base-100 shadow-sm custom-menubar">
+  <div class="navbar-start">
+    <div class="dropdown" [ngClass]="dropdownPosition">
+      <div
+        (click)="scrolltoSection('home')"
+        tabindex="0"
+        role="button"
+        class="btn btn-ghost lg:hidden"
       >
-        <i class="pi pi-linkedin"></i>
-      </a>
-      <p-menu
-        #langMenu
-        [popup]="true"
-        [model]="languageOptions"
-        styleClass="custom-language-menu"
-      ></p-menu>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h8m-8 6h16"
+          />
+        </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-lg"
+      >
+        <li>
+          <a class="homeLigthed" (click)="scrolltoSection('home')">{{
+            "navbar.home" | translate
+          }}</a>
+        </li>
+        <li>
+          <a (click)="scrolltoSection('projects')">
+            {{ "navbar.projects" | translate }}
+          </a>
+        </li>
+        <li>
+          <a (click)="scrolltoSection('technologies')">
+            {{ "navbar.technologies" | translate }}
+          </a>
+        </li>
+        <li>
+          <a (click)="scrolltoSection('services')">
+            {{ "navbar.services" | translate }}
+          </a>
+        </li>
 
-      <button class="nav-icon" (click)="langMenu.toggle($event)">
-        <i class="pi pi-language"></i>
-      </button>
+        <li>
+          <a>{{ "navbar.cv" | translate }}</a>
+          <ul class="p-2">
+            <li>
+              <a (click)="donwloadCV('en')">{{ "navbar.en" | translate }}</a>
+            </li>
+            <li>
+              <a (click)="donwloadCV('es')">{{ "navbar.es" | translate }}</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a><i class="nav-icon pi pi-language"></i></a>
+          <ul class="p-2">
+            <li>
+              <a
+                [class.active]="lang() === 'es'"
+                (click)="toggleLanguage('es')"
+              >
+                {{ "navbar.es" | translate }}
+              </a>
+            </li>
+            <li>
+              <a
+                [class.active]="lang() === 'en'"
+                (click)="toggleLanguage('en')"
+              >
+                {{ "navbar.en" | translate }}
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a class="btn btn-contact" (click)="scrolltoSection('contact')">
+            {{ "navbar.contact" | translate }}
+          </a>
+        </li>
+      </ul>
     </div>
-  </ng-template>
-</p-menubar>
+    <a class="btn btn-ghost text-xl" (click)="scrolltoSection('home')"
+      ><img
+        src="assets/logos/logo3.svg"
+        alt="logo"
+        class="logo"
+        (click)="moveToSection()"
+    /></a>
+  </div>
+  <div class="flex-none hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li>
+        <a class="homeLigthed" (click)="scrolltoSection('home')"
+          >{{ "navbar.home" | translate }}
+        </a>
+      </li>
+      <li>
+        <a (click)="scrolltoSection('projects')">
+          {{ "navbar.projects" | translate }}
+        </a>
+      </li>
+      <li>
+        <a (click)="scrolltoSection('technologies')">
+          {{ "navbar.technologies" | translate }}
+        </a>
+      </li>
+      <li>
+        <a (click)="scrolltoSection('services')">
+          {{ "navbar.services" | translate }}
+        </a>
+      </li>
 
-}
+      <li>
+        <details>
+          <summary>{{ "navbar.cv" | translate }}</summary>
+          <ul class="p-2">
+            <li>
+              <a [class.active]="lang() === 'es'" (click)="donwloadCV('es')">{{
+                "navbar.es" | translate
+              }}</a>
+            </li>
+            <li>
+              <a [class.active]="lang() === 'en'" (click)="donwloadCV('en')">{{
+                "navbar.en" | translate
+              }}</a>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary><i class="nav-icon pi pi-language"></i></summary>
+          <ul class="p-2">
+            <li>
+              <a
+                [class.active]="lang() === 'es'"
+                (click)="toggleLanguage('es')"
+              >
+                {{ "navbar.es" | translate }}
+              </a>
+            </li>
+            <li>
+              <a
+                [class.active]="lang() === 'en'"
+                (click)="toggleLanguage('en')"
+              >
+                {{ "navbar.en" | translate }}
+              </a>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <a class="btn btn-contact" (click)="scrolltoSection('contact')">
+          {{ "navbar.contact" | translate }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

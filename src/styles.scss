@@ -1,107 +1,104 @@
-@import "primeng/resources/themes/lara-light-indigo/theme.css"; // Cambia al tema que uses
-@import "primeng/resources/primeng.min.css";
+@import "tailwindcss";
+
+@plugin "daisyui/theme" {
+  name: "dracula";
+  default: false;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: oklch(28.822% 0.022 277.508);
+  --color-base-200: oklch(26.805% 0.02 277.508);
+  --color-base-300: oklch(24.787% 0.019 277.508);
+  --color-base-content: oklch(97.747% 0.007 106.545);
+  --color-primary: oklch(75.461% 0.183 346.812);
+  --color-primary-content: oklch(15.092% 0.036 346.812);
+  --color-secondary: oklch(74.202% 0.148 301.883);
+  --color-secondary-content: oklch(14.84% 0.029 301.883);
+  --color-accent: oklch(83.392% 0.124 66.558);
+  --color-accent-foreground: oklch(64% 0.222 41.116);
+  --color-accent-content: oklch(16.678% 0.024 66.558);
+  --color-neutral: oklch(39.445% 0.032 275.524);
+  --color-neutral-content: oklch(87.889% 0.006 275.524);
+  --color-info: oklch(88.263% 0.093 212.846);
+  --color-info-content: oklch(17.652% 0.018 212.846);
+  --color-success: oklch(87.099% 0.219 148.024);
+  --color-success-content: oklch(17.419% 0.043 148.024);
+  --color-warning: oklch(95.533% 0.134 112.757);
+  --color-warning-content: oklch(19.106% 0.026 112.757);
+  --color-error: oklch(68.22% 0.206 24.43);
+  --color-error-content: oklch(13.644% 0.041 24.43);
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
 
 /* You can add global styles to this file, and also import other style files */
 html,
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   // overflow-x: hidden; // para evitar scroll horizontal innecesario
-  background-color: #243757;
+  // background-color: #fff;
 }
 :root {
-  --text: #dee5ed;
-  --background: #1f2937;
-  --primary: #abbccf;
-  --secondary: #543f6e;
-  --accent: #8e5da2;
-  --card-backgound: #dee5ed0d;
+  --background: var(--color-base-300);
+  --color-base-100: oklch(28.822% 0.022 277.508);
+  --color-base-200: oklch(26.805% 0.02 277.508);
+  --color-base-300: oklch(24.787% 0.019 277.508);
+  --color-base-content: oklch(97.747% 0.007 106.545);
+  --color-primary: oklch(75.461% 0.183 346.812);
+  --color-primary-content: oklch(15.092% 0.036 346.812);
+  --color-secondary: oklch(74.202% 0.148 301.883);
+  --color-secondary-content: oklch(14.84% 0.029 301.883);
+  --color-accent: oklch(83.392% 0.124 66.558);
+  --color-accent-foreground: oklch(64% 0.222 41.116);
+  --color-accent-content: oklch(16.678% 0.024 66.558);
+  --color-neutral: oklch(39.445% 0.032 275.524);
+  --color-neutral-content: oklch(87.889% 0.006 275.524);
+  --color-info: oklch(88.263% 0.093 212.846);
+  --color-info-content: oklch(17.652% 0.018 212.846);
+  --color-success: oklch(87.099% 0.219 148.024);
+  --color-success-content: oklch(17.419% 0.043 148.024);
+  --color-warning: oklch(95.533% 0.134 112.757);
+  --color-warning-content: oklch(19.106% 0.026 112.757);
+  --color-error: oklch(68.22% 0.206 24.43);
+  --color-error-content: oklch(13.644% 0.041 24.43);
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+.title {
+  color: var(--color-accent-foreground);
 }
 
-/* ===== En src/styles.scss ===== */
-
-/* Estilos para p-galleria en modo Fullscreen */
-
-/* Máscara/Fondo principal del modo fullscreen */
-.p-galleria-mask.p-galleria-mask-enter {
-  // `body` aumenta especificidad
-  background: rgba(0, 0, 0, 0.9) !important; // Ejemplo: Fondo más oscuro
-}
-
-/* Contenedor principal de la galería fullscreen */
-.p-galleria-fullscreen {
-  // Estilos generales para el contenedor si necesitas
-
-  /* Contenedor de la imagen principal */
-  .p-galleria-item-container {
-    background-color: #1e1e1e; // Ejemplo: Fondo para el área de la imagen
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
   }
-
-  /* La imagen en sí */
-  .p-galleria-item {
-    img {
-      border: 3px solid white; // Ejemplo: Borde para la imagen
-      max-height: 80vh; // Asegurar que la imagen no sea demasiado alta
-      object-fit: contain;
-    }
-  }
-
-  /* Botones de navegación (flechas) */
-  .p-galleria-item-prev,
-  .p-galleria-item-next {
-    color: #ffffff !important; // Color del icono
-    background: rgba(50, 50, 50, 0.5) !important; // Fondo semi-transparente
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    margin: 0 1rem; // Espaciado
-
-    &:hover {
-      background: rgba(80, 80, 80, 0.8) !important;
-    }
-
-    .p-galleria-item-prev-icon, // Clases internas de los iconos
-    .p-galleria-item-next-icon {
-      font-size: 1.5rem; // Tamaño del icono de flecha
-    }
-  }
-
-  /* Botón de cerrar (X) */
-  .p-galleria-close {
-    color: #ffffff !important;
-    background: rgba(50, 50, 50, 0.5) !important;
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    top: 1rem;
-    right: 1rem;
-
-    &:hover {
-      background: rgba(80, 80, 80, 0.8) !important;
-    }
-
-    .p-galleria-close-icon {
-      // Clase interna del icono
-      font-size: 1.5rem; // Tamaño del icono X
-    }
-  }
-
-  /* Contenedor de miniaturas (si estuvieran visibles) */
-  .p-galleria-thumbnail-container {
-    background-color: rgba(0, 0, 0, 0.8); // Ejemplo
-    padding: 1rem 0;
-  }
-
-  /* Contenedor de la leyenda/caption (si lo usaras) */
-  .p-galleria-caption {
-    background-color: rgba(0, 0, 0, 0.7) !important;
-    color: #f0f0f0 !important;
-    padding: 1rem;
-    text-align: center;
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-/* --- Fin de estilos para p-galleria --- */
+.animate-marquee-tech {
+  animation: marquee 18s linear infinite;
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.pause-marquee {
+  animation-play-state: paused !important;
+}

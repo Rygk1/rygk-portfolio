@@ -1,28 +1,28 @@
 <section id="home" *ngIf="about" class="about-body">
-  <div class="stars"></div>
+  <!-- <div class="stars"></div> -->
   <div class="about-section">
     <div class="about-image">
+      <img src="assets/profile/profile.webp" height="300px" alt="" />
+    </div>
+    <div class="about-content">
       <h1 class="title" [innerHTML]="'about.name' | translate"></h1>
+
+      <h2 class="subtitle" [innerHTML]="'about.profession' | translate"></h2>
       <p class="about-text">
-        <img src="assets/profile/profile.webp" height="300px" alt="" />
+        {{ "about.summary" | translate }}
+      </p>
+      <p class="about-text">
+        {{ "about.summaryTwo" | translate }}
+      </p>
+      <p class="about-text">
+        {{ "about.summaryThree" | translate }}
+      </p>
+      <p class="about-text">
+        {{ "about.summaryFour" | translate }}
+      </p>
+      <p class="about-text">
+        {{ "about.summaryFive" | translate }}
       </p>
     </div>
-    <h2 class="subtitle">
-      {{ "about.profession" | translate }}
-    </h2>
-    <p class="about-text">
-      {{ "about.summary" | translate }}
-    </p>
-    <p class="about-text">
-      {{ "about.summaryTwo" | translate }}
-    </p>
-    <p class="about-text">
-      {{ "about.summaryThree" | translate }}
-    </p>
-    <p class="about-text">
-      {{ "about.summaryFour" | translate }}
-    </p>
-
-    {{ "about.summaryFive" | translate }}
   </div>
 </section>

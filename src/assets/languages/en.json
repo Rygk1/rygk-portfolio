@@ -4,9 +4,11 @@
     "projects": "Projects",
     "technologies": "Technologies",
     "contact": "Contact",
+    "services": "Services",
+    "testimonials": "Testimonials",
     "cv": "CV",
-    "en": "En",
-    "es": "Es"
+    "en": "EN",
+    "es": "ES"
   },
   "about": {
     "name": "Hi, I'm Rafael&nbsp;Gaitan",
@@ -23,7 +25,8 @@
     "tools": "Tools",
     "stack": "Technologies",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "testimonials": "Testimonials"
   },
   "projects": {
     "agrocollect": {
@@ -51,5 +54,9 @@
     "descriptionFive": "I believe that staying active and constantly learning applies just as much inside the code as it does outside of it.",
     "by": "© Handcrafted by Rafael Gaitan",
     "made": "Made with"
+  },
+  "services": {
+    "title": "My Services",
+    "description": "I offer web and mobile development services, focusing on creating intuitive and efficient applications. My experience includes using modern technologies to build solutions that adapt to each client's specific needs."
   }
 }

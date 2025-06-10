@@ -1,96 +1,27 @@
-::ng-deep .custom-menubar {
-  background-color: #243757;
-  border: none;
-  border-bottom: 1px solid #2c2f36;
-  height: 60px;
-  align-items: center;
+.custom-menubar {
   position: fixed;
-  border-radius: 0;
-  color: #c2b79b;
-  top: 0;
+  top: 20px;
   left: 0;
   right: 0;
-  z-index: 1000;
-
-  @media screen and (max-width: 960px) {
-    .p-menubar .p-menubar-root-list {
-      background: #111827 !important;
-    }
+  margin: auto; /* Centra horizontalmente */
+  max-width: 1100px; /* O el ancho que desees */
+  width: 90%; /* Ancho relativo para responsive */
+  border-radius: 50px;
+  z-index: 500;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  .homeLigthed {
+    color: var(--color-accent-foreground);
   }
-
-  .p-menubar .p-menuitem.p-highlight > .p-menuitem-content {
-    background: #1f2937 !important;
+  ul {
+    font-size: 1rem;
   }
-  .p-menubar .p-menuitem.p-highlight {
-    background: #1f2937 !important;
+  .nav-icon {
+    font-size: 1.3rem;
   }
-
-  .p-menubar-root-list {
-    gap: 0.5rem;
-
-    .p-menuitem-active > p-menubarsub > .p-submenu-list {
-      display: block;
-      background-color: #1f2937;
-      max-width: 6rem;
-    }
-    .p-menuitem .p-menuitem-content {
-      transition: box-shadow 0.2s;
-      border-radius: 11px;
-      .p-menuitem-link {
-        .p-menuitem-text {
-          color: #c2b79b;
-        }
-        .p-menuitem-icon {
-          color: #c2b79b;
-        }
-      }
-    }
-  }
-  .p-menuitem-link {
-    border-radius: 0px;
-  }
-  .custom-language-menu {
-    max-width: 3rem;
-    background: #1f2937 !important;
-    color: #c2b79b !important;
-    margin-top: 0 !important;
-    top: 54px !important;
-    .p-menuitem-link {
-      .p-menuitem-text {
-        color: #c2b79b;
-      }
-    }
-  }
-  .p-menuitem-link {
-    display: flex; // ← centra el contenido
-    align-items: center; // ← centra verticalmente
-    justify-content: center; // ← centra horizontalmente
-    gap: 0.5rem; // ← espacio entre ícono y texto (si aplica)
-    height: 100%; // ← para que el botón ocupe el alto del navbar
-
-    padding: 0.5rem 1.25rem;
-    border-radius: 0rem;
-    color: #c2b79b !important;
-    font-weight: 500;
-
-    &:hover {
-      background-color: #374151; // ← tono más claro al pasar mouse
-    }
-
-    &.p-menuitem-active {
-      font-weight: 600;
-      border-bottom: 2px solid #6366f1;
-      background-color: #1e293b; // ← opcional si quieres un fondo más marcado
-    }
-
-    i {
-      font-size: 1.1rem; // ← mejora visibilidad del ícono
-    }
-  }
-  .p-menuitem-link:focus {
-    outline: none;
-    box-shadow: none;
-    background-color: #1e293b;
+  .btn-contact {
+    border-radius: 40px;
+    background: var(--color-accent-foreground);
   }
 
   .logo {
@@ -116,16 +47,32 @@
       i {
         font-size: 1.5rem;
       }
-
-      // &:hover {
-      //   color: #6366f1;
-      // }
     }
   }
 }
+.active {
+  color: var(--color-accent-foreground);
+}
 
 :host {
-  display: block;
-  margin-top: 60px; // altura del navbar
-  background-color: var(--background); // color de fondo del resto de la página
+  width: 100dvw;
+  //   display: block;
+  //   margin-top: 60px; // altura del navbar
+  //   background-color: var(--background); // color de fondo del resto de la página
+}
+
+@media screen and (max-width: 768px) {
+  .custom-menubar {
+    top: 90%;
+    transform: translateX(0%);
+    ul {
+      font-size: 2rem;
+    }
+    .about-image {
+      img {
+        max-width: 345px;
+        height: 200px;
+      }
+    }
+  }
 }

@@ -3,6 +3,7 @@
     { "id": "home", "opt": "Inicio" },
     { "id": "projects", "opt": "Proyectos" },
     { "id": "technologies", "opt": "Tecnologías" },
+    { "id": "testimonials", "opt": "testimonials" },
     { "id": "contact", "opt": "Contacto" }
   ],
   "about": {
@@ -124,7 +125,8 @@
     { "name": "Bootstrap", "icon": "bootstrap" },
     { "name": "PrimeNg", "icon": "primeng" },
     { "name": "jQuery", "icon": "jquery" },
-    { "name": "PostgreSQL", "icon": "postgresql" }
+    { "name": "PostgreSQL", "icon": "postgresql" },
+    { "name": "daisyUI", "icon": "daisyUI" }
   ],
   "tools": [
     { "name": "Jira", "icon": "jira" },
@@ -150,5 +152,105 @@
     { "name": "React", "icon": "react" },
     { "name": "Tailwind", "icon": "tailwind" },
     { "name": "AWS", "icon": "aws" }
+  ],
+  "services": [
+    {
+      "es": [
+        {
+          "title": "Aplicaciones Web y PWA",
+          "description": "Desarrollo con Angular y Vue.js, offline-first, integración con APIs, Clean Architecture, pruebas unitarias y despliegue CI/CD.",
+          "icon": "globe",
+          "color": "border-orange-500"
+        },
+        {
+          "title": "Aplicaciones Móviles Híbridas",
+          "description": "Apps en Ionic para Android/iOS, sincronización offline con Firestore, validaciones, navegación fluida y CMS integrado.",
+          "icon": "objects-column",
+          "color": "border-indigo-500"
+        },
+        {
+          "title": "Mantenimiento y Soporte",
+          "description": "Refactorización, actualizaciones tecnológicas, automatización de pruebas y mejoras de rendimiento.",
+          "icon": "wrench",
+          "color": "border-green-500"
+        },
+        {
+          "title": "Sistemas de Gestión y CMS",
+          "description": "Paneles de control personalizados, backend escalable con NestJS o Firebase, seguridad y control de accesos.",
+          "icon": "warehouse",
+          "color": "border-blue-500"
+        },
+        {
+          "title": "Consultoría Técnica",
+          "description": "Asesoría en arquitectura, buenas prácticas, RxJS, NgRx, testing, CI/CD y metodologías ágiles como Scrum y Kanban.",
+          "icon": "lightbulb",
+          "color": "border-purple-500"
+        }
+      ],
+      "en": [
+        {
+          "title": "Web applications and PWA",
+          "description": "Development with Angular and Vue.js, offline-first, API integration, Clean Architecture, unit testing, and CI/CD deployment.",
+          "icon": "globe",
+          "color": "border-orange-500"
+        },
+        {
+          "title": "Hybrid Mobile Applications",
+          "description": "Ionic apps for Android/iOS, offline sync with Firestore, validations, smooth navigation, and integrated CMS.",
+          "icon": "objects-column",
+          "color": "border-indigo-500"
+        },
+        {
+          "title": "Maintenance and Support",
+          "description": "Refactoring, technology updates, test automation, and performance improvements.",
+          "icon": "wrench",
+          "color": "border-green-500"
+        },
+        {
+          "title": "Management Systems and CMS",
+          "description": "Custom dashboards, scalable backend with NestJS or Firebase, security and access control.",
+          "icon": "warehouse",
+          "color": "border-blue-500"
+        },
+        {
+          "title": "Technical Consulting",
+          "description": "Consulting on architecture, best practices, RxJS, NgRx, testing, CI/CD, and agile methodologies like Scrum and Kanban.",
+          "icon": "lightbulb",
+          "color": "border-purple-500"
+        }
+      ]
+    }
+  ],
+  "testimonial": [
+    {
+      "name": "Laura Abril",
+      "profession": "UX/UI Designer",
+      "message": "Rafa es un hombre responsable en su área profesional, además de trabajar en equipo y colaborar, para que las cosas funcionen. Es un gran compañero y ser humano de valores, que siempre demostró en el tiempo que trabajamos juntos",
+      "img": "assets/testimonials/laura.jpeg"
+    },
+    {
+      "name": "Yordy Gelvez",
+      "profession": "Full-Stack Developer",
+      "message": "Tuve la oportunidad de trabajar junto a Rafael Gaitan en varios proyectos frontend, y siempre destacó por su capacidad de comunicación y colaboración en equipo. Su actitud proactiva y disposición para apoyar a los demás lo convirtieron en una pieza clave del equipo. Además, demostró un dominio sólido en tecnologías como Angular, SCSS e Ionic, entregando soluciones limpias, escalables y alineadas con las buenas prácticas. Sin duda, es un profesional comprometido y una gran adición para cualquier equipo de desarrollo.",
+      "img": "assets/testimonials/yordy2.jpg"
+    },
+    {
+      "name": "Pedro Blanco",
+      "profession": "Front End Developer",
+      "message": "Trabajar con Rafael en el área de Diseño y Desarrollo fue una experiencia enriquecedora. No solo aportó con ideas frescas y soluciones creativas, sino que también logró darle vida a proyectos que necesitaban una mirada empática y funcional. Siempre estaba atento a los detalles, preguntando con genuino interés cómo mejorar la experiencia de quienes usarían lo que diseñábamos.",
+      "img": "assets/testimonials/pedro.jpeg"
+    },
+    {
+      "name": "William Bonilla",
+      "profession": "Front End Developer",
+      "message": "Rafael es un desarrollador Frontend con gran dominio en Angular. Destaca por su excelente comunicación, lo que facilita mucho el trabajo en equipo. Siempre aporta ideas claras y prácticas para resolver desafíos técnicos, y es muy participativo en cada etapa del proyecto. Su actitud proactiva y su capacidad para colaborar hacen una diferencia positiva en cualquier equipo de desarrollo. Sin duda, fue muy grato trabajar con él durante el tiempo que coincidimos.",
+      "img": "assets/testimonials/william.jpg"
+    },
+    {
+      "name": "Fernanda Cespedes",
+      "profession": "Front End Developer",
+      "message": "Tu paso por la empresa dejó una marca positiva. Fuiste un compañero ejemplar, siempre comprometido, responsable y dispuesto a dar lo mejor en cada tarea. Gracias a tu dedicación y profesionalismo, aportaste al crecimiento de la organización y al buen ambiente de trabajo. Sin duda, cualquier equipo tendrá en ti a un gran trabajador.",
+      "img": "assets/testimonials/fernanda.jpeg"
+    }
   ]
 }

@@ -1,92 +1,50 @@
-import { Component, inject, Inject, OnInit } from '@angular/core';
-import { MenubarModule } from 'primeng/menubar';
+import { NgClass } from '@angular/common';
+import {
+  Component,
+  computed,
+  ElementRef,
+  HostListener,
+  inject,
+  OnInit,
+  Signal,
+  signal,
+  ViewChild,
+} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { SplitButtonModule } from 'primeng/splitbutton';
-import { MenuModule } from 'primeng/menu';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MenubarModule, TranslateModule, SplitButtonModule, MenuModule],
+  imports: [TranslateModule, NgClass],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements OnInit {
   translationService = inject(TranslateService);
-  navItems: any[] = [];
-  languageOptions = [
-    {
-      label: 'En',
-      command: () => this.toggleLanguage('en'),
-    },
-    {
-      label: 'Es',
-      command: () => this.toggleLanguage('es'),
-    },
-  ];
+  cLang = inject(TranslationService);
+  @ViewChild('menuContainer') menuContainer!: ElementRef;
+  isMobile = false;
+  isOverflowing = false;
+  lang: Signal<string> = computed(() => this.cLang.lang());
 
-  ngOnInit() {
-    this.buildNavItems();
-  }
+  ngOnInit() {}
 
-  buildNavItems() {
-    this.navItems = [
-      {
-        label: 'home',
-        icon: 'pi pi-home',
-        command: () =>
-          document
-            .querySelector('#home')
-            ?.scrollIntoView({ behavior: 'smooth' }),
-      },
-      {
-        label: 'projects',
-        icon: 'pi pi-folder',
-        command: () =>
-          document
-            .querySelector('#projects')
-            ?.scrollIntoView({ behavior: 'smooth' }),
-      },
-      {
-        label: 'technologies',
-        icon: 'pi pi-cog',
-        command: () =>
-          document
-            .querySelector('#technologies')
-            ?.scrollIntoView({ behavior: 'smooth' }),
-      },
-      {
-        label: 'contact',
-        icon: 'pi pi-user',
-        command: () =>
-          document
-            .querySelector('#contact')
-            ?.scrollIntoView({ behavior: 'smooth' }),
-      },
-      {
-        label: 'cv',
-        icon: 'pi pi-download',
-        items: [
-          {
-            label: 'en',
-            icon: 'pi pi-file',
-            command: () => this.donwloadCV('en'),
-          },
-          {
-            label: 'es',
-            icon: 'pi pi-file',
-            command: () => this.donwloadCV('es'),
-          },
-        ],
-      },
-    ];
+  scrolltoSection(sectionId: string): void {
+    setTimeout(() => {
+      const el = document.querySelector(`#${sectionId}`);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.warn(`Elemento con id ${sectionId} no encontrado`);
+      }
+    }, 100);
   }
 
   toggleLanguage(lang: string) {
-    // Implement language toggle logic here
-    console.log('Todavia no funciona el toggle de idioma :(');
     this.translationService.use(lang);
+    this.cLang.setCurrentLang(lang);
   }
 
   moveToSection() {
@@ -98,5 +56,29 @@ export class NavbarComponent implements OnInit {
     link.href = `assets/cv/cv-${type}.pdf`; // Path to your CV file
     link.download = 'CV.pdf'; // Name of the downloaded file
     link.click();
+  }
+
+  ngAfterViewInit(): void {
+    this.checkState();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkState();
+  }
+
+  checkState() {
+    const width = window.innerWidth;
+    this.isMobile = width < 768; // sm breakpoint de Tailwind
+    this.isOverflowing =
+      this.menuContainer?.nativeElement.scrollWidth >
+      this.menuContainer?.nativeElement.clientWidth;
+  }
+
+  get dropdownPosition(): string {
+    // Si es móvil => dropdown-top
+    if (this.isMobile) return 'dropdown-top';
+    // Si hay overflow => dropdown normal (hacia abajo)
+    return this.isOverflowing ? 'dropdown' : '';
   }
 }

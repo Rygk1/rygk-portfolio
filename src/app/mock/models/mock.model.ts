@@ -7,6 +7,8 @@ export interface PortfolioData {
   tools: Tool[];
   skills: Skills;
   learning: Technology[];
+  services: Service[];
+  testimonial: Testimonial[];
 }
 
 export interface NavItem {
@@ -64,4 +66,23 @@ export interface Skills {
   versionControl: string[];
   methodologies: string[];
   unitTesting: string[];
+}
+
+export interface Service {
+  en: ServiceLangs[];
+  es: ServiceLangs[];
+}
+
+export interface ServiceLangs {
+  title: string;
+  description: string;
+  icon: string;
+  color: string;
+}
+
+export interface Testimonial {
+  name: string;
+  profession: string;
+  message: string;
+  img: string;
 }

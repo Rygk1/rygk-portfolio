@@ -1,46 +1,35 @@
 <section id="projects" class="projects-container">
-  <h2 class="section-title">{{ "labels.projects" | translate }}</h2>
+  <h1 class="section-title">{{ "labels.projects" | translate }}</h1>
   <div class="p-grid">
     <div *ngFor="let project of projects" class="p-col-12 p-md-6">
-      <div class="project-card-horizontal">
-        <div class="project-image-wrapper" (click)="showGallery(project)">
-          <ng-container *ngIf="project.type === 'web'; else mobileMockup">
-            <!-- PC Mockup -->
-
-            <div class="pc-mockup">
-              <div class="pc-screen">
-                <img
-                  [src]="
-                    'assets/images/' +
-                    project.title.toLowerCase() +
-                    '/' +
-                    project.mainImage
-                  "
-                  class="project-image"
-                />
-              </div>
-            </div>
-          </ng-container>
-          <ng-template #mobileMockup>
-            <!-- Mobile Mockup -->
-            <div class="mobile-space">
-              <div class="mobile-mockup">
-                <div class="mobile-screen">
-                  <img
-                    [src]="
-                      'assets/images/' +
-                      project.title.toLowerCase() +
-                      '/' +
-                      project.mainImage
-                    "
-                    class="project-mobile-image"
-                  />
-                </div>
-              </div>
-            </div>
-          </ng-template>
+      <div
+        class="project-card-horizontal transition-transform duration-500 ease-in-out hover:scale-105"
+      >
+        <div class="project-image-wrapper" (click)="loadModal(project)">
+          <img
+            [src]="
+              'assets/images/' +
+              project.title.toLowerCase() +
+              '/' +
+              project.mainImage
+            "
+            class="project-image"
+          />
         </div>
         <div class="project-card">
+          <div class="project-technologies">
+            <div
+              *ngFor="let tech of project.technologies"
+              class="badge tech-chip"
+            >
+              <img
+                [src]="'assets/icons/' + tech.toLowerCase() + '.svg'"
+                [alt]="tech.toLowerCase()"
+              />
+
+              {{ tech.toLowerCase() }}
+            </div>
+          </div>
           <h3 class="project-title">
             <a target="_blank" rel="noopener noreferrer" class="project-link">
               {{ project.title }}
@@ -60,7 +49,7 @@
                 [href]="project.link"
                 target="_blank"
               >
-                <p-chip label="Demo" styleClass="tech-chip"></p-chip>
+                <div class="tech-chip badge">Demo</div>
               </a>
             </span>
           </h3>
@@ -71,21 +60,52 @@
                 | translate
             }}
           </p>
-
-          <div class="project-technologies">
-            <p-chip
-              *ngFor="let tech of project.technologies"
-              [image]="'assets/icons/' + tech.toLowerCase() + '.svg'"
-              [label]="tech"
-              styleClass="tech-chip"
-            ></p-chip>
-          </div>
         </div>
       </div>
     </div>
   </div>
+  <input
+    type="checkbox"
+    id="mi-modal"
+    class="modal-toggle"
+    [(ngModel)]="galleryModal"
+  />
+
+  <dialog class="modal" *ngIf="displayedProjectImages().length > 0">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="text-lg font-bold text-center">
+        {{ projectTitle.toUpperCase() }}
+      </h3>
+      <form method="dialog">
+        <button
+          class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+          (click)="closeModal()"
+        >
+          ✕
+        </button>
+      </form>
+      <div class="carousel w-full">
+        <ng-container
+          *ngFor="let img of displayedProjectImages(); let i = index"
+        >
+          <div class="carousel-item w-full" [class.hidden]="i !== currentSlide">
+            <img
+              [src]="'assets/images/' + projectTitle.toLowerCase() + '/' + img"
+              class="w-full h-150 object-cover imagesCarousel"
+            />
+          </div>
+        </ng-container>
+        <div
+          class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+        >
+          <a (click)="nextSlide()" class="btn btn-circle">❮</a>
+          <a (click)="prevSlide()" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
 </section>
-<p-galleria
+<!-- <p-galleria
   class="custom-galleria"
   [value]="displayedProjectImages"
   [(visible)]="displayGallery"
@@ -103,4 +123,6 @@
       style="width: 100%; display: block"
     />
   </ng-template>
-</p-galleria>
+</p-galleria> -->
+
+<!-- <button class="btn" onclick="my_modal_3.showModal()">open modal</button> -->

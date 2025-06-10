@@ -1,13 +1,14 @@
+#contact {
+  padding-bottom: 10px;
+}
+
 .contact-section {
-  position: relative; /* Para el posicionamiento absoluto de los hijos */
-  text-align: center;
-  color: #fff;
-  max-width: 1100px; /* Ancho máximo del contenedor */
-  margin: 0 auto; /* Centrar el contenedor */
+  color: var(--color-base-100);
   padding: 1rem 2rem; /* Espacio interno del contenedor */
+  background: var(--color-accent-foreground);
 
   .section-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     margin: 2rem 0 1rem;
   }
@@ -23,7 +24,9 @@
 
     .contact-description {
       font-size: 0.95rem; /* Tamaño del texto de descripción */
-      color: #dad5b7; /* Color gris claro para la descripción */
+      color: var(
+        --color-base-content
+      ); /* Color gris claro para la descripción */
       line-height: 1.6;
       margin-bottom: 20px;
       max-width: 1000px;
@@ -34,46 +37,53 @@
     .profile-picture {
       width: 220px !important; // Puedes ajustar el tamaño
       height: 220px;
-      background-color: white;
+      background-color: var(--color-base-100);
       border-radius: 50%;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 4px solid #c2b79b; // Opcional: borde alrededor del círculo
+      border: 4px solid var(--color-base-100); // Opcional: borde alrededor del círculo
       margin: 1rem;
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover; // Para que la imagen cubra el círculo sin deformarse
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
       }
     }
     .social-media {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+      flex-direction: column;
       gap: 1rem; // Espacio entre los iconos de redes sociales
       margin-top: 1rem; // Espacio superior
       padding-bottom: 1rem; // Espacio inferior
-      border-bottom: 1px solid #c2b79b; // Borde alrededor de los iconos
-      width: 80%;
+
+      a:hover {
+        color: #fff;
+      }
 
       .nav-icon {
-        font-size: 1.3rem;
-        color: #c2b79b;
+        font-size: 2.3rem;
+        color: var(--color-base-100);
         background: none;
         border: none;
         cursor: pointer;
+        text-decoration: none;
 
         i {
-          font-size: 1.5rem;
+          font-size: 2.5rem;
         }
       }
     }
     .made-by {
       font-size: 1.1rem;
-      color: #dad5b7; /* Color gris claro para la descripción */
+      color: var(
+        --color-base-content
+      ); /* Color gris claro para la descripción */
       line-height: 1.6;
 
       display: flex;
@@ -82,7 +92,9 @@
       flex-direction: column;
       .made-with {
         font-size: 1.1rem;
-        color: #dad5b7; /* Color gris claro para la descripción */
+        color: var(
+          --color-base-content
+        ); /* Color gris claro para la descripción */
         line-height: 1.6;
 
         display: flex;

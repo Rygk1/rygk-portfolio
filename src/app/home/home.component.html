@@ -1,5 +1,5 @@
 <!-- Aquí se renderizarán los componentes hijos -->
-<app-about #about *ngIf="aboutData()" [about]="aboutData()"></app-about>
+<app-about #home *ngIf="aboutData()" [about]="aboutData()"></app-about>
 <app-projects
   #projects
   *ngIf="projectsData()"
@@ -11,6 +11,12 @@
   [technologies]="techData()"
   [tools]="toolsData()"
   [learning]="learningData()"
+  [testimonials]="testimonialsData()"
 ></app-technologies>
+<app-my-services
+  #myServices
+  *ngIf="servicesData()"
+  [services]="servicesData()"
+></app-my-services>
 <app-contact #contact></app-contact>
 <!-- <router-outlet> </router-outlet> -->
