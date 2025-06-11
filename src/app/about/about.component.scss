@@ -8,10 +8,10 @@
   border-radius: 0px 0px 40px 40px;
   background: var(--color-neutral-content);
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-blend-mode: overlay;
+  // background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-blend-mode: overlay;
 }
 
 .about-section {
@@ -171,7 +171,7 @@
 @media screen and (max-width: 768px) {
   .about-section {
     flex-direction: column;
-    height: 100dvh;
+    height: 100%;
     .about-image {
       img {
         max-width: 345px;
