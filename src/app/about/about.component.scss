@@ -60,6 +60,8 @@
   font-weight: bold;
   text-transform: uppercase;
   color: var(--color-base-300);
+  line-height: normal;
+
   // background: linear-gradient(90deg, var(--text), var(--text));
   // -webkit-background-clip: text;
   // -webkit-text-fill-color: transparent;
@@ -72,6 +74,7 @@
   font-weight: bold;
   font-size: 1.5rem;
   color: var(--color-accent-foreground);
+  line-height: normal;
 
   /* margin-bottom: 2rem; */
 }
