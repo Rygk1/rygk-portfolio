@@ -19,6 +19,7 @@ export class TechnologiesComponent implements OnInit {
   currentSlide = 0;
   slideWidth = 20;
   intervalId: any;
+  isPaused = true;
 
   ngOnInit() {
     this.startCarousel();
@@ -48,5 +49,9 @@ export class TechnologiesComponent implements OnInit {
 
   resumeCarousel() {
     this.startCarousel();
+  }
+
+  togglePause() {
+    this.isPaused = !this.isPaused;
   }
 }

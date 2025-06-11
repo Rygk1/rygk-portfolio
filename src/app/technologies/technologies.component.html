@@ -81,7 +81,11 @@
       {{ "labels.testimonials" | translate }}
     </h2>
 
-    <div class="group py-20 overflow-hidden">
+    <div
+      class="py-20 overflow-hidden"
+      [class.group]="!isPaused"
+      (click)="togglePause()"
+    >
       <div class="flex w-max animate-marquee">
         <!-- Contenedor duplicado 1 -->
         <ng-container *ngFor="let t of testimonials">

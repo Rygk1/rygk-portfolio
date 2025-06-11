@@ -1,4 +1,6 @@
-<div class="navbar bg-base-100 shadow-sm custom-menubar">
+<div
+  class="navbar bg-base-100 shadow-sm fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1100px] rounded-full z-50 px-4 py-2 flex justify-between items-center custom-menubar"
+>
   <div class="navbar-start">
     <div class="dropdown" [ngClass]="dropdownPosition">
       <div
@@ -27,9 +29,11 @@
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-lg"
       >
         <li>
-          <a class="homeLigthed" (click)="scrolltoSection('home')">{{
-            "navbar.home" | translate
-          }}</a>
+          <a
+            class="homeLigthed text-[var(--color-accent-foreground)]"
+            (click)="scrolltoSection('home')"
+            >{{ "navbar.home" | translate }}</a
+          >
         </li>
         <li>
           <a (click)="scrolltoSection('projects')">
@@ -98,7 +102,9 @@
   <div class="flex-none hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
       <li>
-        <a class="homeLigthed" (click)="scrolltoSection('home')"
+        <a
+          class="homeLigthed text-[var(--color-accent-foreground)]"
+          (click)="scrolltoSection('home')"
           >{{ "navbar.home" | translate }}
         </a>
       </li>
@@ -159,7 +165,10 @@
         </details>
       </li>
       <li>
-        <a class="btn btn-contact" (click)="scrolltoSection('contact')">
+        <a
+          class="btn btn-contact rounded-full bg-[var(--color-accent-foreground)]"
+          (click)="scrolltoSection('contact')"
+        >
           {{ "navbar.contact" | translate }}
         </a>
       </li>
