@@ -16,7 +16,7 @@
 
 .about-section {
   padding: 2rem 2rem;
-  color: #c2b79b;
+  color: var(--color-neutral-content);
   max-width: 1100px;
   height: 90dvh;
   margin: 0 auto;
@@ -171,6 +171,7 @@
 @media screen and (max-width: 768px) {
   .about-section {
     flex-direction: column;
+    height: 100dvh;
     .about-image {
       img {
         max-width: 345px;
