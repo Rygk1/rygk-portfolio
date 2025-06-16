@@ -1,9 +1,14 @@
 :host {
   display: block;
   height: 100%;
-  // background-color: var(--background);
+  background: var(--color-home-background);
+  width: 100%;
 }
 
 app-about {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+app-projects {
+  background: var(--color-projects-background);
 }

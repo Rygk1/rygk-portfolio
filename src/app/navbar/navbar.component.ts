@@ -29,7 +29,9 @@ export class NavbarComponent implements OnInit {
   isOverflowing = false;
   lang: Signal<string> = computed(() => this.cLang.lang());
 
-  ngOnInit() {}
+  ngOnInit() {
+    document.documentElement.classList.add('darkTheme');
+  }
 
   scrolltoSection(sectionId: string): void {
     setTimeout(() => {
@@ -80,5 +82,16 @@ export class NavbarComponent implements OnInit {
     if (this.isMobile) return 'dropdown-top';
     // Si hay overflow => dropdown normal (hacia abajo)
     return this.isOverflowing ? 'dropdown' : '';
+  }
+
+  toggleTheme(): void {
+    const root = document.documentElement;
+    const currentTheme = root.classList.contains('lightTheme')
+      ? 'lightTheme'
+      : 'darkTheme';
+    const newTheme = currentTheme === 'lightTheme' ? 'darkTheme' : 'lightTheme';
+
+    root.classList.remove(currentTheme);
+    root.classList.add(newTheme);
   }
 }

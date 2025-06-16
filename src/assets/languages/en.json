@@ -11,7 +11,8 @@
     "es": "ES"
   },
   "about": {
-    "name": "Hi, I'm Rafael&nbsp;Gaitan",
+    "greeting": "Hi, I'm",
+    "fullName": "Rafael Gaitan",
     "profession": "Front-end developer with 4+ years of experience in web and mobile applications",
     "summary": "I'm taken by challenges and love crafting elegant solutions to complex problems",
     "summaryTwo": "I believe in the power of good clean code, clear, and purposeful",
@@ -31,19 +32,19 @@
   "projects": {
     "agrocollect": {
       "title": "AgroCollect",
-      "description": "Mobile app (offline-first) used by an NGO to support agricultural producers across Colombia. \n I worked in the implementation of a custom CMS for content management, documented user flows, features, and structured the full technical documentation.\nThis solution enabled data collection without internet access, improving field operations and decision-making for multiple agricultural initiatives."
+      "description": "Mobile app (offline-first) used by an NGO to support agricultural producers across Colombia. I worked in the implementation of a custom CMS for content management, documented user flows, features, and structured the full technical documentation.\nThis solution enabled data collection without internet access, improving field operations and decision-making for multiple agricultural initiatives."
     },
     "riskmann": {
       "title": "RiskMann",
-      "description": "Inspection platform for tools, equipment, and facilities using customizable templates.\n I contributed to building dynamic interfaces to schedule inspections, manage action plans, and visualize data.\nThe platform improved the inspection workflow and helped reduce reporting time by centralizing key safety metrics."
+      "description": "Inspection platform for tools, equipment, and facilities using customizable templates. I contributed to building dynamic interfaces to schedule inspections, manage action plans, and visualize data.\nThe platform improved the inspection workflow and helped reduce reporting time by centralizing key safety metrics."
     },
     "iper": {
       "title": "IPER",
-      "description": "Real-time risk matrix management system focused on workplace safety.\n I worked on features to identify, assess, and control risks, enabling tailored action plans per activity.\nThe system empowered companies to track risk exposure live and comply with local safety regulations more efficiently."
+      "description": "Real-time risk matrix management system focused on workplace safety. I worked on features to identify, assess, and control risks, enabling tailored action plans per activity.\nThe system empowered companies to track risk exposure live and comply with local safety regulations more efficiently."
     },
     "scow": {
       "title": "SCOW",
-      "description": "Security company management platform for handling clients, users, weapons, and ammunition inventory.\n I developed modules for inventory tracking, client management, and internal controls.\nThe platform streamlined logistics and compliance for companies handling regulated equipment."
+      "description": "Security company management platform for handling clients, users, weapons, and ammunition inventory. I developed modules for inventory tracking, client management, and internal controls.\nThe platform streamlined logistics and compliance for companies handling regulated equipment."
     }
   },
   "contact": {

@@ -1,6 +1,6 @@
 <section id="technologies">
   <div class="tech-section">
-    <h2 class="section-title">{{ "labels.stack" | translate }}</h2>
+    <h2 class="section-title stack-title">{{ "labels.stack" | translate }}</h2>
     <!-- <div class="tech-grid">
       <ng-container *ngFor="let tech of technologies">
         <div class="tech-card">
@@ -47,12 +47,14 @@
     </div>
 
     <div class="tools-container">
-      <h2 class="section-title tech-title text-end pr-[10%]">
+      <h2 class="section-title tools-title text-end pr-[10%]">
         {{ "labels.tools" | translate }}
       </h2>
       <div class="tech-grid">
         <ng-container *ngFor="let tool of tools">
-          <div class="tech-card">
+          <div
+            class="tech-card transition-transform duration-300 hover:scale-110"
+          >
             <img
               [src]="'assets/icons/' + tool.icon + '.svg'"
               [alt]="tool.name"
@@ -61,12 +63,14 @@
           </div>
         </ng-container>
       </div>
-      <h2 class="section-title tech-title text-start pl-[10%]">
+      <h2 class="section-title tools-title text-start pl-[10%]">
         {{ "labels.learning" | translate }}
       </h2>
       <div class="tech-grid">
         <ng-container *ngFor="let tool of learning">
-          <div class="tech-card">
+          <div
+            class="tech-card transition-transform duration-300 hover:scale-110"
+          >
             <img
               [src]="'assets/icons/' + tool.icon + '.svg'"
               [alt]="tool.name"
@@ -90,12 +94,12 @@
         <!-- Contenedor duplicado 1 -->
         <ng-container *ngFor="let t of testimonials">
           <div
-            class="relative bg-white rounded-lg shadow-lg border border-orange-400 p-6 pt-14 w-[250px] sm:w-72 md:w-80 mx-4 h-fit text-center flex-shrink-0"
+            class="cursor-pointer relative bg-white rounded-lg shadow-lg border border-[var(--color-accent-foreground)] p-6 pt-14 w-[300px] sm:w-90 md:w-90 mx-4 h-fit text-center flex-shrink-0"
           >
             <!-- Imagen -->
             <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
               <div
-                class="w-24 h-24 rounded-full border-4 border-orange-400 overflow-hidden bg-white"
+                class="w-24 h-24 rounded-full border-4 border-[var(--color-accent-foreground)] overflow-hidden bg-white"
               >
                 <img
                   [src]="t.img"
@@ -115,11 +119,11 @@
         <!-- Contenedor duplicado 2 -->
         <ng-container *ngFor="let t of testimonials">
           <div
-            class="relative bg-white rounded-lg shadow-lg border border-orange-400 p-6 pt-14 w-[250px] sm:w-72 md:w-80 mx-4 h-fit text-center flex-shrink-0"
+            class="cursor-pointer relative bg-white rounded-lg shadow-lg border border-[var(--color-accent-foreground)] p-6 pt-14 w-[300px] sm:w-72 md:w-80 mx-4 h-fit text-center flex-shrink-0"
           >
             <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
               <div
-                class="w-24 h-24 rounded-full border-4 border-orange-400 overflow-hidden bg-white"
+                class="w-24 h-24 rounded-full border-4 border-[var(--color-accent-foreground)] overflow-hidden bg-white"
               >
                 <img
                   [src]="t.img"

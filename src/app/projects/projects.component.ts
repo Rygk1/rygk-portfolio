@@ -16,7 +16,7 @@ export class ProjectsComponent {
   galleryModal = false;
 
   displayGallery: boolean = false;
-  displayedProjectImages: Signal<string[]> = signal([]);
+  displayedProjectImages = signal<string[]>([]);
   projectTitle: string = '';
   currentSlide: number = 0;
 
@@ -25,7 +25,7 @@ export class ProjectsComponent {
       return;
     }
     this.projectTitle = project.title;
-    this.displayedProjectImages = computed(() => project.images);
+    this.displayedProjectImages.set(project.images);
     this.galleryModal = true;
   }
 

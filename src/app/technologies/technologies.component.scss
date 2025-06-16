@@ -1,30 +1,26 @@
 #technologies {
   display: block;
-  background-color: var(
-    --color-base-100
-  ); /* Fondo oscuro principal (ajusta si es necesario) */
+  background-color: var(--color-body-background);
   padding: 50px 20px; /* Espaciado alrededor de la sección */
-  color: var(--color-base-content); /* Color de texto principal claro */
   position: relative; /* Para el posicionamiento absoluto de los hijos */
 }
 
 .tech-section {
   text-align: center;
-  color: var(--color-base-content);
   max-width: 1300px; /* Ancho máximo del contenedor */
   margin: 0 auto; /* Centrar el contenedor */
+
+  .stack-title {
+    color: var(--color-tech-title);
+  }
+  .tools-title {
+    color: var(--color-tools-title);
+  }
 
   .section-title {
     font-size: 2.5rem;
     font-weight: bold;
     margin: 2.5rem 0 3rem;
-  }
-
-  .tech-title {
-    color: var(--color-base-300);
-  }
-  .testimonials-title {
-    color: var(--color-base-content);
   }
 
   .tech-grid {
@@ -43,7 +39,7 @@
 }
 
 .tech-card {
-  background-color: var(--color-base-content);
+  background-color: var(--color-cards-background);
   border-radius: 12px;
   padding: 1rem;
   width: 150px;
@@ -52,9 +48,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-  color: var(--color-base-300);
+  color: var(--color-tools-title);
 
   img {
     width: 80px;
@@ -66,12 +60,7 @@
 
   span {
     font-size: 0.875rem;
-    font-weight: 500;
-  }
-
-  &:hover {
-    transform: translateY(-4px);
-    background-color: #c2b79b;
+    font-weight: 600;
   }
 }
 
@@ -105,7 +94,7 @@
 }
 
 .tools-container {
-  background: var(--color-neutral-content);
+  background: var(--color-tools-background);
   border-radius: 20px;
   padding: 20px;
   margin-top: 3rem;

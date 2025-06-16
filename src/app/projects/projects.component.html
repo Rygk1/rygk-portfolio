@@ -5,7 +5,10 @@
       <div
         class="project-card-horizontal transition-transform duration-500 ease-in-out hover:scale-105"
       >
-        <div class="project-image-wrapper" (click)="loadModal(project)">
+        <div
+          class="project-image-wrapper cursor-pointer"
+          (click)="loadModal(project)"
+        >
           <img
             [src]="
               'assets/images/' +
@@ -16,7 +19,7 @@
             class="project-image"
           />
         </div>
-        <div class="project-card">
+        <div class="project-card h-fit">
           <div class="project-technologies">
             <div
               *ngFor="let tech of project.technologies"
@@ -49,7 +52,9 @@
                 [href]="project.link"
                 target="_blank"
               >
-                <div class="tech-chip badge">Demo</div>
+                <div class="tech-chip badge text-[var(--color-white-content)]">
+                  Demo
+                </div>
               </a>
             </span>
           </h3>
@@ -105,24 +110,3 @@
     </div>
   </dialog>
 </section>
-<!-- <p-galleria
-  class="custom-galleria"
-  [value]="displayedProjectImages"
-  [(visible)]="displayGallery"
-  [responsiveOptions]="responsiveOptions"
-  [containerStyle]="{ 'max-width': '850px' }"
-  [numVisible]="7"
-  [circular]="true"
-  [fullScreen]="true"
-  [showItemNavigators]="true"
-  [showThumbnails]="false"
->
-  <ng-template pTemplate="item" let-item>
-    <img
-      [src]="'assets/images/' + projectTitle.toLowerCase() + '/' + item"
-      style="width: 100%; display: block"
-    />
-  </ng-template>
-</p-galleria> -->
-
-<!-- <button class="btn" onclick="my_modal_3.showModal()">open modal</button> -->

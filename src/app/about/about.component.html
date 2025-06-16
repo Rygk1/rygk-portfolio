@@ -1,14 +1,16 @@
 <section id="home" *ngIf="about" class="about-body">
   <!-- <div class="stars"></div> -->
-  <div class="about-section">
+  <div class="about-section p-5">
     <div class="about-image">
       <img src="assets/profile/profile.webp" height="300px" alt="" />
     </div>
     <div class="about-content">
-      <h1 class="title" [innerHTML]="'about.name' | translate"></h1>
-
+      <h1 class="title text-[var(--color-text-dark)]">
+        {{ "about.greeting" | translate }}
+        <span class="nowrap">{{ "about.fullName" | translate }}</span>
+      </h1>
       <h2
-        class="subtitle py-3"
+        class="subtitle py-3 text-[var(--color-accent-foreground)]"
         [innerHTML]="'about.profession' | translate"
       ></h2>
       <p class="about-text">

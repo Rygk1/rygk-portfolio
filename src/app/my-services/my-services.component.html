@@ -1,9 +1,9 @@
 <section id="services">
-  <section class="py-20 px-10 bg-gray-100 text-center">
-    <h2 class="text-[2.5rem] font-bold text-slate-800 mb-4">
+  <section class="py-20 px-10 bg-[var(--color-about-background)] text-center">
+    <h2 class="text-[2.5rem] text-[var(--color-tools-title)] font-bold mb-4">
       {{ "services.title" | translate }}
     </h2>
-    <p class="text-gray-600 max-w-2xl mx-auto mb-10">
+    <p class="max-w-2xl text-[var(--color-tools-title)] mx-auto mb-10">
       {{ "services.description" | translate }}
     </p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -12,14 +12,14 @@
         class="relative bg-white rounded-lg shadow p-6 pt-10 transition-transform duration-500 ease-in-out hover:scale-105"
       >
         <div
-          class="absolute -top-5 -left-4 bg-orange-500 rounded-lg p-3 text-white text-xl"
+          class="absolute -top-5 -left-4 bg-[var(--color-accent-foreground)] rounded-lg p-3 text-white text-xl"
         >
           <i [class]="'pi pi-' + service.icon" class="text-4xl"></i>
         </div>
         <h3 class="text-orange-600 text-xl font-bold mb-3 mt-2">
           {{ service.title }}
         </h3>
-        <p class="text-slate-600 text-sm">
+        <p class="text-[var(--color-tools-title)] text-sm">
           {{ service.description }}
         </p>
       </div>

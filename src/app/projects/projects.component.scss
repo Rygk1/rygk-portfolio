@@ -1,6 +1,7 @@
 .projects-container {
   max-width: 1100px; /* Ancho máximo del contenido */
   margin: 0 auto; /* Centrar el contenedor */
+  // background: var(--color-projects-background);
 
   .section-title {
     text-align: center;
@@ -14,7 +15,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background-color: var(--color-base-content);
+    background-color: var(--color-card-background);
     padding: 20px;
     border-radius: 8px;
     height: 100%;
@@ -61,7 +62,7 @@
 
     .project-title {
       font-size: 1.4rem; /* Tamaño del título de la tarjeta */
-      color: var(--color-base-300); /* Color blanco para el título */
+      color: var(--color-text-dark); /* Color blanco para el título */
       font-weight: bold;
       margin-top: 0;
       margin: 15px 0px;
@@ -70,31 +71,31 @@
       justify-content: space-between;
 
       .project-link {
-        color: var(--color-base-300);
+        color: var(--color-text-dark);
         text-decoration: none;
         transition: color 0.3s ease, text-shadow 0.3s ease;
 
         i {
           margin-left: 8px;
           font-size: 1.2rem;
-          color: var(--color-base-300);
+          color: var(--color-text-dark);
         }
 
         .external-icon {
           font-size: 1rem;
           padding-right: 5px;
-          color: var(--color-base-300);
+          color: var(--color-text-dark);
         }
       }
       .project-type-icon {
         font-size: 1.5rem;
-        color: var(--color-base-300);
+        color: var(--color-text-dark);
       }
     }
 
     .project-description {
       font-size: 0.95rem; /* Tamaño del texto de descripción */
-      color: var(--color-base-300); /* Color gris claro para la descripción */
+      color: var(--color-text-dark); /* Color gris claro para la descripción */
       line-height: 1.6;
       margin-bottom: 20px;
       flex-grow: 1; /* Hace que la descripción ocupe el espacio disponible */
@@ -112,7 +113,7 @@
         background-color: var(
           --color-accent-foreground
         ); /* Fondo del chip (usa !important si es necesario sobreescribir estilos de PrimeNG) */
-        color: var(--color-base-content); /* Color del texto del chip */
+        color: var(--color-badge-bg);
         transition: transform 0.3s ease;
         font-weight: 500;
         border: none;
@@ -169,7 +170,7 @@ img {
       padding: 0;
 
       .project-title {
-        color: var(--color-base-300);
+        color: var(--color-text-dark);
         font-size: 1.2rem;
         flex-direction: column;
         gap: 0.5rem;

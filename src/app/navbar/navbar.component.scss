@@ -1,11 +1,13 @@
 .custom-menubar {
   font-family: "Montserrat", sans-serif;
   font-size: 3rem;
+  background: var(--color-navbar-background);
   .homeLigthed {
     color: var(--color-accent-foreground);
   }
   ul {
     font-size: 1rem;
+    font-weight: 600;
   }
   .nav-icon {
     font-size: 1.3rem;
@@ -43,6 +45,7 @@
 }
 .active {
   color: var(--color-accent-foreground);
+  font-weight: 600;
 }
 
 :host {

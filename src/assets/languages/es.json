@@ -11,8 +11,9 @@
     "es": "ES"
   },
   "about": {
-    "name": "Hola, soy Rafael&nbsp;Gaitan",
-    "profession": "Desarrollador front-end + 4 años \nde experiencia en aplicaciones web y móviles",
+    "greeting": "Hola, soy",
+    "fullName": "Rafael Gaitan",
+    "profession": "Desarrollador front-end + 4 años de experiencia en aplicaciones web y móviles",
     "summary": "Me motivan los desafíos y disfruto encontrar soluciones elegantes a problemas complejos",
     "summaryTwo": "Creo en el poder de un buen código: limpio, claro y con propósito",
     "summaryThree": "Trabajo en equipo, escucho, propongo y ajusto, porque cada proyecto merece algo único",
@@ -31,19 +32,19 @@
   "projects": {
     "agrocollect": {
       "title": "AgroCollect",
-      "description": "Aplicación móvil offline-first utilizada por una ONG en Colombia para apoyar a productores agrícolas en terreno.\nTrabajé en conjunto en la implementación de un CMS personalizado, documenté funcionalidades, flujos y estructuré toda la documentación técnica.\nLa solución permitió recolectar datos sin conexión, mejorando la operación en campo y la toma de decisiones en varios proyectos agrícolas."
+      "description": "Aplicación móvil offline-first utilizada por una ONG en Colombia para apoyar a productores agrícolas en terreno. Trabajé en conjunto en la implementación de un CMS personalizado, documenté funcionalidades, flujos y estructuré toda la documentación técnica.\nLa solución permitió recolectar datos sin conexión, mejorando la operación en campo y la toma de decisiones en varios proyectos agrícolas."
     },
     "riskmann": {
       "title": "RiskMann",
-      "description": "Plataforma para inspeccionar herramientas, equipos e instalaciones mediante plantillas personalizables.\nContribuí al desarrollo de interfaces dinámicas para programar inspecciones, gestionar planes de acción y visualizar datos.\nLa herramienta optimizó el flujo de trabajo de inspecciones y redujo los tiempos de reporte al centralizar métricas clave de seguridad."
+      "description": "Plataforma para inspeccionar herramientas, equipos e instalaciones mediante plantillas personalizables. Contribuí al desarrollo de interfaces dinámicas para programar inspecciones, gestionar planes de acción y visualizar datos.\nLa herramienta optimizó el flujo de trabajo de inspecciones y redujo los tiempos de reporte al centralizar métricas clave de seguridad."
     },
     "iper": {
       "title": "IPER",
-      "description": "Sistema en tiempo real para gestionar matrices de riesgos por actividad en entornos laborales.\nDesarrollé funcionalidades para identificar, evaluar y controlar riesgos, con planes de acción adaptados a cada contexto.\nLa plataforma ayudó a empresas a monitorear su exposición al riesgo y cumplir con normativas de seguridad de forma más eficaz."
+      "description": "Sistema en tiempo real para gestionar matrices de riesgos por actividad en entornos laborales. Desarrollé funcionalidades para identificar, evaluar y controlar riesgos, con planes de acción adaptados a cada contexto.\nLa plataforma ayudó a empresas a monitorear su exposición al riesgo y cumplir con normativas de seguridad de forma más eficaz."
     },
     "scow": {
       "title": "SCOW",
-      "description": "Sistema de gestión para empresas de seguridad que manejan armas y municiones.\nImplementé módulos para controlar inventarios, gestionar clientes y usuarios, y asegurar trazabilidad en procesos internos.\nEl sistema agilizó la logística y el cumplimiento normativo en compañías que operan con equipos regulados."
+      "description": "Sistema de gestión para empresas de seguridad que manejan armas y municiones. Implementé módulos para controlar inventarios, gestionar clientes y usuarios, y asegurar trazabilidad en procesos internos.\nEl sistema agilizó la logística y el cumplimiento normativo en compañías que operan con equipos regulados."
     }
   },
   "contact": {
