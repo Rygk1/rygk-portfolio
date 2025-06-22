@@ -54,4 +54,20 @@ export class TechnologiesComponent implements OnInit {
   togglePause() {
     this.isPaused = !this.isPaused;
   }
+
+  trackById(index: number): number {
+    return index;
+  }
+
+  trackByIdTool(index: number): number {
+    return index;
+  }
+
+  trackByIdLearning(index: number): number {
+    return index;
+  }
+
+  trackByIdTestimonial(index: number): number {
+    return index;
+  }
 }

@@ -1,7 +1,10 @@
 <section id="projects" class="projects-container">
   <h1 class="section-title">{{ "labels.projects" | translate }}</h1>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div *ngFor="let project of projects" class="p-col-12 p-md-6">
+    <div
+      *ngFor="let project of projects; trackBy: trackById"
+      class="p-col-12 p-md-6"
+    >
       <div
         class="project-card-horizontal transition-transform duration-500 ease-in-out hover:scale-105"
       >
@@ -17,17 +20,19 @@
               project.mainImage
             "
             class="project-image"
+            loading="lazy"
           />
         </div>
         <div class="project-card h-fit">
           <div class="project-technologies">
             <div
-              *ngFor="let tech of project.technologies"
+              *ngFor="let tech of project.technologies; trackBy: trackByIdTech"
               class="badge tech-chip"
             >
               <img
                 [src]="'assets/icons/' + tech.toLowerCase() + '.svg'"
                 [alt]="tech.toLowerCase()"
+                loading="lazy"
               />
 
               {{ tech.toLowerCase() }}
@@ -91,12 +96,17 @@
       </form>
       <div class="carousel w-full">
         <ng-container
-          *ngFor="let img of displayedProjectImages(); let i = index"
+          *ngFor="
+            let img of displayedProjectImages();
+            let i = index;
+            trackBy: trackByIdImage
+          "
         >
           <div class="carousel-item w-full" [class.hidden]="i !== currentSlide">
             <img
               [src]="'assets/images/' + projectTitle.toLowerCase() + '/' + img"
               class="w-full h-150 object-cover imagesCarousel"
+              loading="lazy"
             />
           </div>
         </ng-container>

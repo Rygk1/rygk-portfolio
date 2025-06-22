@@ -1,4 +1,4 @@
-import { NgClass } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import {
   Component,
   computed,
@@ -17,7 +17,7 @@ import { TranslationService } from '../services/translation.service';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [TranslateModule, NgClass],
+  imports: [TranslateModule, NgClass, NgIf],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
@@ -28,6 +28,9 @@ export class NavbarComponent implements OnInit {
   isMobile = false;
   isOverflowing = false;
   lang: Signal<string> = computed(() => this.cLang.lang());
+  activeDropdown = signal<'cv' | 'lang' | null>(null);
+  @ViewChild('cv') cv!: ElementRef<HTMLButtonElement>;
+  @ViewChild('toggleLang') toggleLang!: ElementRef<HTMLButtonElement>;
 
   ngOnInit() {
     document.documentElement.classList.add('darkTheme');
@@ -77,7 +80,7 @@ export class NavbarComponent implements OnInit {
       this.menuContainer?.nativeElement.clientWidth;
   }
 
-  get dropdownPosition(): string {
+  getGropdownPosition(): string {
     // Si es móvil => dropdown-top
     if (this.isMobile) return 'dropdown-top';
     // Si hay overflow => dropdown normal (hacia abajo)
@@ -93,5 +96,25 @@ export class NavbarComponent implements OnInit {
 
     root.classList.remove(currentTheme);
     root.classList.add(newTheme);
+  }
+
+  toggleDropdown(menu: 'cv' | 'lang' | null): void {
+    // const current = this.activeDropdown(); // lee el valor actual
+
+    // Si ya está abierto el mismo menú, lo cerramos
+    // if (current === menu) {
+    //   this.activeDropdown.set(null);
+    //   return;
+    // }
+
+    // Abrimos el nuevo menú
+    this.activeDropdown.set(menu);
+
+    // Cerramos el otro si estaba abierto
+    if (menu === 'cv' && this.activeDropdown() === 'lang') {
+      this.toggleLang.nativeElement.click();
+    } else if (menu === 'lang' && this.activeDropdown() === 'cv') {
+      this.cv.nativeElement.click();
+    }
   }
 }

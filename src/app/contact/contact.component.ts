@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { Component, inject, Input } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -7,7 +8,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { BehaviorSubject } from 'rxjs';
 
 interface Contact {
   firstName: string;
@@ -18,8 +18,21 @@ interface Contact {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [TranslateModule, ReactiveFormsModule],
+  imports: [TranslateModule, ReactiveFormsModule, NgIf],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {}
+export class ContactComponent {
+  @Input() set contact(valor: any) {
+    alert(valor);
+  }
+
+  myForm: FormGroup = new FormGroup({
+    firstName: new FormControl(0, [Validators.required, Validators.max(10)]),
+  });
+
+  hasError(control: keyof typeof this.myForm.controls, error: string): boolean {
+    const formControl = this.myForm.controls[control];
+    return formControl?.invalid && (formControl?.touched || formControl?.dirty);
+  }
+}

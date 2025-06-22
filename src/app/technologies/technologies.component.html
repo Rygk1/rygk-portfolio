@@ -1,21 +1,13 @@
 <section id="technologies">
   <div class="tech-section">
     <h2 class="section-title stack-title">{{ "labels.stack" | translate }}</h2>
-    <!-- <div class="tech-grid">
-      <ng-container *ngFor="let tech of technologies">
-        <div class="tech-card">
-          <img [src]="'assets/icons/' + tech.icon + '.svg'" [alt]="tech.name" />
-          <span>{{ tech.name }}</span>
-        </div>
-      </ng-container>
-    </div> -->
     <div class="overflow-hidden relative carouselContainer">
       <div
         class="flex w-max animate-marquee-tech gap-3"
         (mouseenter)="pauseCarousel()"
         (mouseleave)="resumeCarousel()"
       >
-        <ng-container *ngFor="let tech of technologies">
+        <ng-container *ngFor="let tech of technologies; trackBy: trackById">
           <div
             class="flex-shrink-0 relative sm:w-50 md:w-50 mx-4 flex justify-center items-center transition-transform duration-300 hover:scale-110"
           >
@@ -24,12 +16,13 @@
                 [src]="'assets/icons/' + tech.icon + '.svg'"
                 [alt]="tech.name"
                 class="h-12 w-12 transition-transform duration-300"
+                loading="lazy"
               />
               <span>{{ tech.name }}</span>
             </div>
           </div>
         </ng-container>
-        <ng-container *ngFor="let tech of technologies">
+        <ng-container *ngFor="let tech of technologies; trackBy: trackById">
           <div
             class="flex-shrink-0 relative sm:w-50 md:w-50 mx-4 flex justify-center items-center p-4 transition-transform duration-300 hover:scale-110"
           >
@@ -38,6 +31,7 @@
                 [src]="'assets/icons/' + tech.icon + '.svg'"
                 [alt]="tech.name"
                 class="h-12 w-12 transition-transform duration-300"
+                loading="lazy"
               />
               <span>{{ tech.name }}</span>
             </div>
@@ -51,13 +45,14 @@
         {{ "labels.tools" | translate }}
       </h2>
       <div class="tech-grid">
-        <ng-container *ngFor="let tool of tools">
+        <ng-container *ngFor="let tool of tools; trackBy: trackByIdTool">
           <div
             class="tech-card transition-transform duration-300 hover:scale-110"
           >
             <img
               [src]="'assets/icons/' + tool.icon + '.svg'"
               [alt]="tool.name"
+              loading="lazy"
             />
             <span>{{ tool.name }}</span>
           </div>
@@ -67,13 +62,14 @@
         {{ "labels.learning" | translate }}
       </h2>
       <div class="tech-grid">
-        <ng-container *ngFor="let tool of learning">
+        <ng-container *ngFor="let tool of learning; trackBy: trackByIdLearning">
           <div
             class="tech-card transition-transform duration-300 hover:scale-110"
           >
             <img
               [src]="'assets/icons/' + tool.icon + '.svg'"
               [alt]="tool.name"
+              loading="lazy"
             />
             <span>{{ tool.name }}</span>
           </div>
@@ -92,7 +88,9 @@
     >
       <div class="flex w-max animate-marquee">
         <!-- Contenedor duplicado 1 -->
-        <ng-container *ngFor="let t of testimonials">
+        <ng-container
+          *ngFor="let t of testimonials; trackBy: trackByIdTestimonial"
+        >
           <div
             class="cursor-pointer relative bg-white rounded-lg shadow-lg border border-[var(--color-accent-foreground)] p-6 pt-14 w-[300px] sm:w-90 md:w-90 mx-4 h-fit text-center flex-shrink-0"
           >
@@ -105,6 +103,7 @@
                   [src]="t.img"
                   [alt]="t.name"
                   class="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -117,7 +116,9 @@
         </ng-container>
 
         <!-- Contenedor duplicado 2 -->
-        <ng-container *ngFor="let t of testimonials">
+        <ng-container
+          *ngFor="let t of testimonials; trackBy: trackByIdTestimonial"
+        >
           <div
             class="cursor-pointer relative bg-white rounded-lg shadow-lg border border-[var(--color-accent-foreground)] p-6 pt-14 w-[300px] sm:w-72 md:w-80 mx-4 h-fit text-center flex-shrink-0"
           >
@@ -129,6 +130,7 @@
                   [src]="t.img"
                   [alt]="t.name"
                   class="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -142,35 +144,4 @@
       </div>
     </div>
   </div>
-
-  <!-- <div style="width: 100%; padding: 20px">
-    <div
-      style="
-        height: 400px;
-        width: 300px;
-        padding: 20px;
-        background: #c2b79b;
-        color: #243757;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      "
-    >
-      <div class="profile-picture">
-        <img src="assets/profile/profile-real.webp" alt="Mi foto" />
-      </div>
-      <div style="text-align: center">
-        <h1 style="font-weight: bold; font-size: 1.8rem; margin-bottom: 0">
-          Laura Abril
-        </h1>
-        Web Designer
-      </div>
-      <p style="text-align: center">
-        Es un buen compañero, siempre está ahí para ayudarme a resolver
-        problemas y aprender cosas nuevas.
-      </p>
-    </div>
-  </div> -->
 </section>

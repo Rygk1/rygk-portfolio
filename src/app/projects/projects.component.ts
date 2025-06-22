@@ -50,4 +50,16 @@ export class ProjectsComponent {
       (this.currentSlide - 1 + this.displayedProjectImages().length) %
       this.displayedProjectImages().length;
   }
+
+  trackById(index: number): number {
+    return index;
+  }
+
+  trackByIdImage(index: number): number {
+    return index;
+  }
+
+  trackByIdTech(index: number): number {
+    return index;
+  }
 }

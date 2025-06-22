@@ -8,7 +8,7 @@
     </p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <div
-        *ngFor="let service of allServices()"
+        *ngFor="let service of allServices(); trackBy: trackById"
         class="relative bg-white rounded-lg shadow p-6 pt-10 transition-transform duration-500 ease-in-out hover:scale-105"
       >
         <div

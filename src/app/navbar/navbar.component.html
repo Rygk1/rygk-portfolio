@@ -2,7 +2,7 @@
   class="navbar bg-base-100 shadow-sm fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1100px] rounded-full z-50 px-4 py-2 flex justify-between items-center custom-menubar"
 >
   <div class="navbar-start">
-    <div class="dropdown bg-[var(--bg-navbar)]" [ngClass]="dropdownPosition">
+    <div class="dropdown bg-[var(--bg-navbar)]" [ngClass]="getGropdownPosition">
       <div
         (click)="scrolltoSection('home')"
         tabindex="0"
@@ -131,6 +131,7 @@
         alt="logo"
         class="logo"
         (click)="moveToSection()"
+        loading="lazy"
     /></a>
   </div>
   <div class="flex-none hidden lg:flex">
@@ -159,16 +160,24 @@
       </li>
 
       <li>
-        <details>
-          <summary>{{ "navbar.cv" | translate }}</summary>
-          <ul class="p-2">
+        <details #cv>
+          <summary (click)="toggleDropdown('cv')">
+            {{ "navbar.cv" | translate }}
+          </summary>
+          <ul class="p-2" *ngIf="activeDropdown() === 'cv'">
             <li>
-              <a [class.active]="lang() === 'es'" (click)="donwloadCV('es')">
+              <a
+                [class.active]="lang() === 'es'"
+                (click)="donwloadCV('es'); toggleDropdown(null)"
+              >
                 {{ "navbar.es" | translate }} <i class="pi pi-download"></i>
               </a>
             </li>
             <li>
-              <a [class.active]="lang() === 'en'" (click)="donwloadCV('en')">
+              <a
+                [class.active]="lang() === 'en'"
+                (click)="donwloadCV('en'); toggleDropdown(null)"
+              >
                 {{ "navbar.en" | translate }} <i class="pi pi-download"></i>
               </a>
             </li>
@@ -176,13 +185,15 @@
         </details>
       </li>
       <li>
-        <details>
-          <summary><i class="nav-icon pi pi-language p-[0.5]"></i></summary>
-          <ul class="p-2">
+        <details #toggleLang>
+          <summary (click)="toggleDropdown('lang')">
+            <i class="nav-icon pi pi-language p-[0.5]"></i>
+          </summary>
+          <ul class="p-2" *ngIf="activeDropdown() === 'lang'">
             <li>
               <a
                 [class.active]="lang() === 'es'"
-                (click)="toggleLanguage('es')"
+                (click)="toggleLanguage('es'); toggleDropdown(null)"
               >
                 {{ "navbar.es" | translate }}
               </a>
@@ -190,7 +201,7 @@
             <li>
               <a
                 [class.active]="lang() === 'en'"
-                (click)="toggleLanguage('en')"
+                (click)="toggleLanguage('en'); toggleDropdown(null)"
               >
                 {{ "navbar.en" | translate }}
               </a>
